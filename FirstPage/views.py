@@ -24,5 +24,5 @@ def predictMPG(request):
 
     testData = pd.DataFrame({'x': temp}).transpose()
     scoredVal = int(reloadModel.predict(testData))
-    context={'scoredVal':scoredVal}
+    context={'scoredVal':scoredVal, 'temp':temp }
     return render(request, 'index.html', context)
